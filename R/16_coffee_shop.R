@@ -1,6 +1,7 @@
 setwd("C:/workspace/R/R_shiny")
 load("./01_code/coffee/coffee_shop.rdata")
-library(shiny) ; library(leaflet) ; library(leaflet.extras) ; library(dplyr)
+library(shiny) ; library(leaflet) ; library(leaflet.extras)
+library(dplyr) ; library(ggplot2)
 
 ui<-bootstrapPage(
   tags$style(type = "text/css","html, body {width:100%;height:100%}"),
