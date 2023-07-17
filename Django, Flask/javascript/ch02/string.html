@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        str = "Java, javascript, java";
+        // 문자열.match( /검색키워드/옵션 )
+        // i : insensitive 대소문자 구분없이 검사
+        // g : global(전역 검사)
+        result = str.match(/java/ig); // /키워드/, i:대소문자 무관, g:전역검사
+        document.write(result + "<br>");
+        result = str.replaceAll("java", "JAVA");
+        document.write(result + "<br>");
+        str = "one two three four five";
+        arr = str.split(" ");
+        for (item in arr) {
+        document.write(arr[item] + "<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

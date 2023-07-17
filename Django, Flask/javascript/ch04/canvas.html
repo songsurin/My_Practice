@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function init(){
+        let canvas=document.getElementById("myCanvas"); //let:변수, const:상수, var:변수
+        let context=canvas.getContext("2d"); //canvas:화면
+        context.fillStyle="#ffff00"; // context: 페인트
+        context.fillRect(10,10,100,50);
+        context.rect(80,10,100,50);
+        context.strokeStyle="blue";
+        context.stroke();
+    }
+</script>
+<style>
+body { margin: 0; }
+</style>
+</head>
+<body onload="init()">
+<canvas id="myCanvas" width="200px" height="100px" style="border:1px solid red;"></canvas>
+</body>
+</html>

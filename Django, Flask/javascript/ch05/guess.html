@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        let count = 0;
+        let com = 0;
+        $(function(){
+            com = Math.floor(Math.random() * 100)+1;
+            $("#com").val(com);
+        });
+        function guess(){
+            result="";
+            number=parseInt($("#user").val());
+            count++;
+            if(number == com) result="맞았습니다.";
+            else if(number<com) result="더 큰 숫자를 입력하세요.";
+            else result="더 작은 숫자를 입력하세요.";
+            $("#result").val(result);
+            $("#count").val(count);
+        }
+    </script>
+</head>
+<body>
+    <h2>guess number</h2>
+    number : <input type="text" id="user" size="5">
+    <input type="button" value="OK" onclick="guess()"><br>
+    count : <input type="text" id="count" size="5"><br>
+    result : <input type="text" id="result" size="30"><br>
+    random : <input type="text" id="com" size="5">
+</body>
+</html>

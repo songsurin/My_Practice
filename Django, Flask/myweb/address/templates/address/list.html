@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>주소록</h2>
+  <a href="/">Home</a>
+  <a href="write">등록</a>
+  <table border="1">
+    <tr>
+      <th>번호</th>
+      <th>이름</th>
+      <th>전화</th>
+      <th>이메일</th>
+      <th>주소</th>
+     </tr>
+    {% for row in items %}
+<!--    개별주소 in 리스트-->
+    <tr>
+      <td>{{row.idx}}</td>
+<!--      {{변수}} 출력-->
+      <td><a href="detail?idx={{row.idx}}">{{row.name}}</a></td>
+<!--        주소?변수=값  (?이후: 쿼리 스트링) get방식-->
+      <td>{{row.tel}}</td>
+      <td>{{row.email}}</td>
+      <td>{{row.address}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

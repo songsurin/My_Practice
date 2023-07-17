@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function move() {
+            url = document.getElementById("url").value;
+            if (url != "") {
+                location.href = url;
+            } else {
+            alert("select url");
+        }
+        }
+    </script>
+</head>
+<body>
+    <select id="url">
+       <option value="">::select::</option>
+       <option value="http://naver.com">naver</option>
+       <option value="http://daum.net">daum</option>
+       <option value="http://nate.com">nate</option>
+       <option value="http://google.com">google</option>
+    </select>
+    <input type="button" onclick="move()" value="OK">
+</body>
+</html>

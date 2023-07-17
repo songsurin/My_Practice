@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.6.1.min.js">
+    </script>
+    <script>
+    $(function() {
+        $("#btn_show").click(function() {
+            $("#img1").show("slow"); //slow, fast
+        });
+        $("#btn_hide").click(function() {
+            $("#img1").hide("fast");
+        });
+        $("#btn_toggle").click(function() {
+            $("#img1").toggle("fast");
+        });
+        $("#btn_animate").click(function() {
+            $("#img1").animate({
+            width : "300px",
+            height : "200px",
+            opacity : "0.5"
+            }, 5000);
+        });
+        $("#btn_fadein").click(function() {
+            $("#img1").fadeIn(5000, function() {
+                $("#img2").fadeIn("slow");
+            });
+        });
+        $("#btn_fadeout").click(function() {
+            $("#img1").fadeOut("slow");
+            $("#img2").fadeOut("slow");
+        });
+        $("#btn_slidedown").click(function() {
+            $("#img1").slideDown("slow");
+        });
+        $("#btn_slideup").click(function() {
+            $("#img1").slideUp("slow");
+        });
+        $("#btn_chain").click(function() {
+            $("#img1").show().fadeOut("slow").slideDown("slow");
+        });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn_hide">hide</button>
+    <button id="btn_show">show</button>
+    <button id="btn_toggle">toggle</button>
+    <button id="btn_animate">animation</button>
+    <button id="btn_fadeout">fade out</button>
+    <button id="btn_fadein">fade in</button>
+    <button id="btn_slideup">slide up</button>
+    <button id="btn_slidedown">slide down</button>
+    <button id="btn_chain">chain</button>
+    <hr>
+    <img id="img1" src="../images/autumn.jpg" width="30%" height="30%">
+    <img id="img2" src="../images/tomato.jpeg">
+</body>
+</html>

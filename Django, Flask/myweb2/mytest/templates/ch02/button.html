@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script>
+function check() {
+  let price = document.form1.price.value; <!-- 태그 name으로 접근 -->
+  let amount = document.form1.amount.value;
+  if (price == "") {
+    alert("Enter the price.");
+    document.form1.price.focus();
+    return;
+  }
+  if (amount == "") {
+    alert("Enter the quantity.");
+    document.form1.amount.focus();
+    return;
+  }
+  document.form1.submit();
+}
+</script>
+</head>
+<body>
+<form name="form1" method="post">
+{% csrf_token %}
+  price : <input type="text" name="price"><br>
+  amount : <input type="text" name="amount"><br>
+  <button type="button" onclick="check()">OK</button> <!--제출기능x-->
+</form>
+</body>
+</html>
+
+<!--<button type="button" onclick="check()"></button> 제출 기능x-->
+<!--<button></button> 제출 기능o-->

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function get() {
+            div1 = document.getElementById("div1").innerHTML;
+            alert(div1);
+        }
+        function set(msg) {
+            document.getElementById("div1").innerHTML = msg;
+        }
+        function changeImage() {
+            img = document.getElementById("img1");
+            img.src = "../images/winter.jpg";
+            img.style.width = "50px";
+            img.style.height = "50px";
+        }
+        function changeStyle() {
+            div1 = document.getElementById("div1");
+            div1.style.color = "red";
+            div1.style.backgroundColor = "yellow";
+            div1.style.fontSize = "30px";
+            div1.style.fontStyle = "italic";
+        }
+        function show() {
+            document.getElementById("img1").style.visibility = "visible";
+        }
+        function hide() {
+            document.getElementById("img1").style.visibility = "hidden";
+        }
+
+    </script>
+        <style>
+        #div1 {
+        background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">div</div>
+    <a href="#" onclick="get()">get div</a>
+    <a href="#" onclick="set('change div')">set div</a>
+    <br>
+    <img id="img1" src="../images/summer.jpg" width="20%" height="20%"><br>
+    <input type="button" value="change image" onclick="changeImage()">
+    <input type="button" value="hide" onclick="hide()">
+    <input type="button" value="show" onclick="show()">
+    <br>
+    <input type="button" value="change text" onclick="changeStyle()">
+</body>
+</html>

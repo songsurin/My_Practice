@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.6.1.min.js">
+    </script>
+    <script>
+    $(function() {
+        students = [{'name':'Hong',age:21},
+                    {'name':'Kim','age':'25'},
+                    {'name':'Park','age':'30'}];
+        names = "";
+        ages = "";
+        for (i = 0; i < students.length; i++) {
+            names += students[i].name + " ";
+            ages += students[i].age + " ";
+        }
+        $("#names").html(names);
+        $("#ages").html(ages);
+    });
+    </script>
+</head>
+<body>
+    <h2>학생 명단</h2>
+    <p style="background-color: yellow;">
+    이름: <span id="names"></span><br>
+    나이: <span id="ages"></span>
+    </p>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>구구단 계산 결과</h2>
+{% autoescape off %} <!-- html 코드가 그대로 보이지 않도록 처리 -->
+{{result}}
+{% endautoescape %}
+<br>
+<a href="/ajax">ajax 메인</a>
+<a href="/">Home</a>
+</body>
+</html>

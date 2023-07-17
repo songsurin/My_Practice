@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc(n){ //계산 옵션
+            num=parseFloat(document.getElementById("num").value);
+            switch(n){
+                case 1:
+                    result=Math.sin((num*Math.PI)/180.0);
+                    break;
+                case 2:
+                    result=Math.log(num);
+                    break;
+                case 3:
+                    result=Math.sqrt(num);
+                    break;
+                case 4:
+                    result=Math.abs(num);
+                    break;
+            }
+            document.getElementById("result").value=result;
+        }
+    </script>
+</head>
+<body>
+    num: <input type="text" id="num"><br> <!--id: 유일한 값-->
+    result: <input id="result"><br> <!--name: 중복 가능-->
+    <input type="button" value="SIN" onclick="calc(1)">
+    <input type="button" value="LOG" onclick="calc(2)">
+    <input type="button" value="SQRT" onclick="calc(3)">
+    <input type="button" value="ABS" onclick="calc(4)">
+</body>
+</html>

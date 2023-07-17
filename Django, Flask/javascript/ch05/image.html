@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#small a").click( function(e){
+                e.preventDefault();
+                url = $(this).attr("href");
+                $("#large img").attr("src", url);
+            });
+        });
+    </script>
+    <style>
+        #large img { width:420px; height:420px; }
+        ul { padding: 0; margin: 0 }
+        ul li { list-style:none; display:inline; }
+        ul img { width:100px; height:100px; }
+    </style>
+</head>
+<body>
+    <div id="large">
+        <a href="#"><img src="../images/spring.jpg"></a>
+    </div>
+    <div id="small">
+        <ul>
+        <li><a href="../images/spring.jpg"><img src="../images/spring.jpg"></a></li>
+        <li><a href="../images/summer.jpg"><img src="../images/summer.jpg"></a></li>
+        <li><a href="../images/autumn.jpg"><img src="../images/autumn.jpg"></a></li>
+        <li><a href="../images/winter.jpg"><img src="../images/winter.jpg"></a></li>
+        </ul>
+    </div>
+</body>
+</html>

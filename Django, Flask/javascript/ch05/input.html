@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.6.1.min.js">
+    </script>
+    <script>
+    $(function() {
+        $("#button1").click(function() {
+            let name = $("#name").val();
+            alert(name);
+            name = prompt("name:","Kim");
+            $("#name").val(name);
+            $("#img1").attr("src", "../images/summer.jpg");
+            $("#img1").attr({
+                "width" : "300px",
+                "height" : "300px"
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+    name : <input id="name" value=""><br>
+    <img id="img1" src="../images/tomato.jpeg"><br>
+    <button id="button1">OK</button>
+</body>
+</html>

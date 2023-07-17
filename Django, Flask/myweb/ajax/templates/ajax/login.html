@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+  $(function(){
+    $("#btnLogin").click(function(){
+      let userid=$("#userid").val();
+      let passwd=$("#passwd").val();
+      let params={"userid":userid,"passwd":passwd};
+      $.ajax({
+        url: "login_check",
+        data: params,
+        success: function(txt){
+          $("#div1").html(txt.result);
+        }
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+아이디 : <input id="userid"><br>
+비번 : <input type="password" id="passwd"><br>
+<input type="button" value="확인" id="btnLogin">
+<div id="div1">결과 출력 영역</div>
+</body>
+</html>

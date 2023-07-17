@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        arr = [ 10, 100, 88, 77, 99, 200 ];
+        arr.sort(); //기본적으로 문자열 기준으로 정렬됨
+        document.write("문자열기준:"+arr+"<br>");
+        arr.sort( function(a,b) { return a-b; } );
+        document.write("오름차순:"+arr+"<br>");
+        arr.sort( function(a,b) { return b-a; } );
+        document.write("내림차순:"+arr+"<br>");
+        nums = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+        arr2 = nums.slice(5); //index 5~
+        document.write(arr2 + "<br>");
+        arr3 = nums.slice(5, 8); //start, stop
+        document.write(arr3 + "<br>");
+        result = nums.join(";");
+        document.write(typeof(nums) + "<br>"); //object
+        document.write(typeof(result) + "<br>"); //string
+        document.write(result + "<br>");
+        result2 = result.split(";");
+        document.write(result2+"<br>");
+        document.write(typeof(result2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

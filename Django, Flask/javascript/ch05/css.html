@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.6.1.min.js">
+    </script>
+    <script>
+    $(function(){
+        $("#button1").click(function(){
+            color=$("#div1").css("background-color");
+            width=$("#div1").css("width");
+            height=$("#div1").css("height");
+            $("#result").html(`background:${color}<br>width:
+            ${width}<br>height:${height}<br>`);
+        });
+        $("#button2").click(function(){
+            $("#div1").css("background-color","red");
+            $("#div1").css("width","200px");
+            $("#div1").css("height","200px");
+        });
+        $("#button3").click(function(){
+            $("#div2").addClass("myclass");
+        });
+    });
+    </script>
+    <style>
+    #div1 { width: 60px; height: 60px; }
+    .myclass {
+        border: 1px solid green;
+        background-color: purple;
+        width: 100px; height: 100px;
+    }
+    </style>
+</head>
+<body>
+    <div id="div1" style="background-color: pink;">div 1</div>
+    <div id="div2">div 2</div>
+    <button id="button1">button 1</button>
+    <button id="button2">button 2</button>
+    <button id="button3">add class</button>
+    <p id="result"></p>
+</body>
+</html>

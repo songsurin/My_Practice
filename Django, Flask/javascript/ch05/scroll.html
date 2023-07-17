@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function() {
+            const top = $("#div1").position().top;
+            $(window).scroll( function() {
+                offset = $(window).scrollTop(); //스크롤 거리
+                $("#div1").stop().animate(
+                {"top":top+offset+"px"},1000);
+            });
+        });
+    </script>
+    <style>
+        #div1 {
+            position: absolute;
+            width:200px;
+            top:100px;
+            right:100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Menu</h2>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="div1">
+    <img src="../images/tomato.jpeg"
+    width="200px" height="200px" >
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+  function update_sal(empno,sal){
+    location.href="/procedure/update_emp?empno="+empno+"&sal="+sal;
+  }
+  function update_sal_p(empno){
+    location.href="/procedure/update_emp_p?empno="+empno;
+   }
+</script>
+</head>
+<body>
+<h2>사원</h2>
+<a href="/procedure">프로시저 메인</a>
+<a href="/">Home</a>
+<a href="/procedure/write_emp">사원추가</a>
+<table border="1">
+  <tr>
+    <th>사번</th>
+    <th>이름</th>
+    <th>직급</th>
+    <th>입사일자</th>
+    <th>급여</th>
+    <th>&nbsp;</th>
+  </tr>
+  {% for emp in empList %}
+  <tr>
+    <td>{{emp.empno}}</td>
+    <td>{{emp.ename}}</td>
+    <td>{{emp.job}}</td>
+    <td>{{emp.hiredate|date:'Y-m-d G:i:s'}}</td>
+    <td>{{emp.sal}}</td>
+    <td>
+      <input type="button" value="급여인상" onclick="update_sal('{{emp.empno}}','{{emp.sal}}')">
+      <input type="button" value="급여인상(프로시저)" onclick="update_sal_p('{{emp.empno}}')">
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>

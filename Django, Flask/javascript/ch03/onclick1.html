@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change_color(color) {
+            document.getElementById("main").style.backgroundColor = color;
+        }
+        function change_text(color) {
+            document.getElementById("main").style.color = color;
+        }
+        function view_date() {
+            now = new Date();
+            display = now.toLocaleString();
+            document.getElementById("div1").innerHTML = display;
+            setTimeout("view_date()", 1000);
+        }
+    </script>
+</head>
+<body onload="view_date()" id="main">
+    <h2>change color</h2>
+    <div id="div1"></div>
+    <input type="button" value="green"
+    onclick="change_color('green');change_text('white')">
+    <input type="button" value="yellow"
+    onclick="change_color('yellow');change_text('#000000')">
+    <input type="button" value="black"
+    onclick="change_color('black');change_text('#ffbbee')">
+</body>
+</html>

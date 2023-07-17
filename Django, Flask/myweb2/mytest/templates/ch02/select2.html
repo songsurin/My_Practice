@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="{{bgcolor}}">
+<form method="post">
+{% csrf_token %}
+이름 : <input name="name"><br>
+색상 :
+<select name="color">
+  <option value="blue">파랑</option>
+  <option value="green">초록</option>
+  <option value="red">빨강</option>
+</select><br>
+<input type="submit" value="확인">
+</form>
+
+</body>
+</html>

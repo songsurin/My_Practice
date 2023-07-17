@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>]
+<script>
+  function update(){
+      document.form1.action="/salary_update/";
+      document.form1.submit();
+  }
+  function del(){
+      document.form1.action="/salary_delete/";
+      document.form1.submit();
+  }
+</script>
+</head>
+<body>
+<form method="post" name="form1">
+{% csrf_token %}
+<table border="1">
+    <tr>
+        <td>이름</td>
+        <td><input name="name" value="{{item.name}}"></td>
+    </tr>
+    <tr>
+        <td>월급</td>
+        <td><input name="sal" value="{{item.sal}}"></td>
+    </tr>
+    <tr>
+        <td>보너스</td>
+        <td><input name="bonus" value="{{item.bonus}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="hidden" name="id" value="{{item.id}}">
+            <input type="button" value="수정" onclick="update()">
+            <input type="button" value="삭제" onclick="del()">
+            <input type="button" value="목록" onclick="location.href='/salary_list'">
+        </td>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>

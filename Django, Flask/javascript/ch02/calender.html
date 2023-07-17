@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        date = new Date();
+        y = date.getFullYear();
+        m = date.getMonth();
+        d = date.getDate();
+        start_date = new Date(y, m, 1);
+        start_day = start_date.getDay();
+        month_days =[ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+        if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0)
+            month_days[1] = 29;
+
+        last_date = month_days[m];
+        row = Math.ceil((start_day + last_date) / 7);
+        document.write(`<h2>${y}.${m+1}</h2>`);
+
+        cal = "<table border='1'>";
+        cal += "<tr>";
+        cal += "<th><span style='color:red'>일</span></th>";
+        cal += "<th>월</th>";
+        cal += "<th>화</th>";
+        cal += "<th>수</th>";
+        cal += "<th>목</th>";
+        cal += "<th>금</th>";
+        cal += "<th><span style='color:blue'>토</span></th>";
+        cal += "</tr>";
+
+        date_num = 1;
+
+        for (i = 1; i <= row; i++) {
+            cal += "<tr>";
+            
+            for (k = 1; k <= 7; k++) {
+                if (i==1&&k<=start_day || date_num>last_date) {
+                    cal += "<td>&nbsp;</td>";
+                } else {
+                    if (k == 1) {
+                        cal += `<td><span style='color:red'>
+        ${date_num}</span></td>`;
+                } else if (k == 7) {
+                        cal += `<td><span style='color:blue'>
+        ${date_num}</span></td>`;
+                } else {
+                        cal += `<td>${date_num}</td>`;
+                }
+                date_num++;
+            }
+         }
+            cal += "</tr>";
+        }
+        cal += "</table>";
+        document.write(cal);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

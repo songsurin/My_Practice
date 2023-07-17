@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script>
+function check(){
+  let name=document.getElementById("name");
+  let year=document.getElementById("year");
+  if(name.value==""){
+    alert("이름을 입력하세요.");
+    name.focus();
+    return;
+  }
+  if(year.value==""){
+    alert("연도를 입력하세요.");
+    year.focus();
+    return;
+  }
+  document.form1.submit();
+}
+</script>
+</head>
+<body>
+<h2>나이 계산</h2>
+<form name="form1" method="post">
+{% csrf_token %}
+이름: <input type="text" name="name" id="name"><br>
+연도: <input type="text" name="year" id="year"><br>
+<input type="button" value="확인" onclick="check()">
+</form>
+</body>
+</html>

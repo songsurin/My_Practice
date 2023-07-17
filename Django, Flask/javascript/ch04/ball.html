@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    let context;
+    let mx=3, my=4; //x, y 증가값
+    let x=50, y=50; //ball의 x,y 좌표
+    function draw(){
+        let canvas=document.getElementById("myCanvas");
+        let context=canvas.getContext("2d");
+        context.clearRect(0,0,300,300);
+        context.beginPath();
+        let grad=context.createLinearGradient(0,0,300,300);
+        grad.addColorStop(0,"white");
+        grad.addColorStop(0.25,"lightblue");
+        grad.addColorStop(0.5,"blue");
+        grad.addColorStop(0.75,"darkblue");
+        grad.addColorStop(1,"black");
+        context.fillStyle=grad;
+        // 원그리기 x,y,반지름,시작각도,끝각도,반시계방향
+        context.arc(x,y,10,0,Math.PI*2, false);
+        context.closePath();
+        context.fill();
+        if(x<(0+10)||x>(300-10)){
+            mx=-mx;
+        }
+        if(y<(0+10)||y>(300-10)){
+            my=-my;
+        }
+        x += mx;
+        y += my;
+        }
+        setInterval(draw, 1);
+    </script>
+    <style>
+        canvas {
+        background-color: rgb(175, 210, 255);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+</body>
+</html>

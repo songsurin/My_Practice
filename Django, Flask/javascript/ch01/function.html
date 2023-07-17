@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func1(name) {
+            alert("Hello "+name);
+        }
+        function func2() {
+            name=document.getElementById("name").value;
+            str="Hello "+name;
+            alert(str)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="func1('Kim')">button 1</button>
+    <br>
+    Name : <input id="name">
+    <button onclick="func2()">button 2</button>
+</body>
+</html>

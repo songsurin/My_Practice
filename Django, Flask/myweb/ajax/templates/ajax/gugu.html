@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+  $(function(){
+  $("#num").keyup(function(){ <!-- 버튼 안눌러도 자동으로 출력 -->
+  let num=$("#num").val();
+  if(num!=''){
+          $.ajax({
+            url: "gugu_ajax", <!-- 백그라운드 서버 주소 -->
+            data: {"num":num}, <!-- 전달할 데이터 -->
+            success: function(txt){
+              $("#result").html(txt.result);
+            }
+          });
+          }else{
+          $("#result").html('');
+          }
+    });
+    $("#button1").click(function(){
+      let num=$("#num").val();
+      $.ajax({
+        url: "gugu_ajax", <!-- 백그라운드 서버 주소 -->
+        data: {"num":num}, <!-- 전달할 데이터 -->
+        success: function(txt){
+          $("#result").html(txt.result);
+        }
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+<h2>동기식</h2>
+<form action="gugu" action="gugu" method="post">
+{% csrf_token %}
+number :
+<input type="text" name="num">
+<input type="submit" value="확인">
+</form>
+
+<h2>비동기식</h2>
+number :
+<input type="text" id="num">
+<input type="button" id="button1" value="확인">
+<div id="result">결과 출력 영역</div>
+</body>
+</html>

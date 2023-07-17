@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if request.session.id %}
+    {{request.session.id}}님 환영합니다.<br>
+    비번: {{request.session.pwd}}<br>
+    이름: {{request.session.name}}<br>
+{% else %}
+    세션을 생성해 주세요
+    <a href="/set_session">세션 생성</a>
+{% endif %}
+<br>
+<a href="/clear_session">세션 초기화</a>
+<a href="/change_session">세션 변경</a>
+<a href="#" onclick="history.back()">Back</a>
+<a href="/">Home</a>
+</body>
+</html>

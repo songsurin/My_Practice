@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        let font_size;
+        $(function() {
+            $("#font_option li a").click(function(){
+                obj = $(this).attr("id");
+                font_size = parseInt($(".p1").css("font-size"));
+                switch (obj) {
+                case "larger":
+                    setFontSize(10);
+                    break;
+                case "smaller":
+                    setFontSize(-10);
+                    break;
+                }
+            });
+        });
+        function setFontSize(size) {
+            font_size = font_size + size;
+            $(".p1").css("font-size" , font_size + "px");
+        }
+    </script>
+    <style>
+    .p1 {
+        font-size: 30px;
+    }
+    </style>
+</head>
+<body>
+    <ul id="font_option">
+        <li><a href="#" id="larger">larger</a></li>
+        <li><a href="#" id="smaller">smaller</a></li>
+    </ul>
+    <p class="p1">paragraph</p>
+</body>
+</html>

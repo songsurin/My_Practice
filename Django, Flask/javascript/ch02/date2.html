@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkDate() {
+            str_date = document.getElementById("date1").value;
+            document.write(str_date + "<br>");
+            date1 = new Date(str_date);
+            today = new Date();
+            document.write("time stamp:" + today.getTime() + "<br>");
+            diff = today.getTime() - date1.getTime();
+            document.write(diff + "<br>");
+            document.write(diff / (1000 * 60 * 60 * 24) + "<br>");
+            let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            if (days > 7) {
+                alert("7일이 경과되어 환불이 어렵습니다.");
+            } else {
+                alert("환불 가능합니다.");
+            }
+    }
+    </script>
+</head>
+<body>
+    date : <input type="date" id="date1">
+    <button onclick="checkDate()">OK</button>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mouse_over(obj) {
+            obj.style.border = "2px solid red";
+            obj.style.fontSize = "30px";
+        }
+        function mouse_out(obj) {
+            obj.style.border = "";
+            obj.style.fontSize = "12px";
+        }
+    </script>
+</head>
+<body>
+    <div style="background-color: yellow; width: 200px;"
+    onmouseover="mouse_over(this)"
+    onmouseout="mouse_out(this)">mouse event
+    </div>
+</body>
+</html>
